@@ -39,7 +39,7 @@
         }
 
         return $(this).each(function(){
-            self = this;
+            var self = this;
             date_str = options.dateGetter(this);
             $(self).html(time_ago_in_words_with_parsing(date_str));
         });
