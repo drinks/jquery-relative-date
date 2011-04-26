@@ -13,7 +13,7 @@
         },
         options = $.extend({}, defaults, opts),
         time_ago_in_words_with_parsing = function(from) {
-            var date = new Date; 
+            var date = new Date;
             date.setTime(Date.parse(from));
             return time_ago_in_words(date);
         },
@@ -28,7 +28,7 @@
             if (distance_in_minutes == 1) { return 'a minute ago'; }
             if (distance_in_minutes < 45) { return distance_in_minutes + ' minutes ago'; }
             if (distance_in_minutes < 90) { return 'about 1 hour ago'; }
-            if (distance_in_minutes < 1440) { return 'about ' + Math.floor(distance_in_minutes / 60) + ' hours ago'; }
+            if (distance_in_minutes < 1440) { return 'about ' + Math.round(distance_in_minutes / 60) + ' hours ago'; }
             if (distance_in_minutes < 2880) { return '1 day ago'; }
             if (distance_in_minutes < 43200) { return Math.floor(distance_in_minutes / 1440) + ' days ago'; }
             if (distance_in_minutes < 86400) { return 'about 1 month ago'; }
